@@ -1,0 +1,22 @@
+<div class="d-flex flex-column flex-shrink-0 bg-body-tertiary sticky-top vh-100" style="width: 4.5rem;">
+  <a href="/" class="d-block p-3 link-body-emphasis text-decoration-none" data-bs-toggle="tooltip"
+    data-bs-placement="right" data-bs-original-title="Icon-only">
+    <i class="bi bi-film" style="font-size: 40px;"></i>
+  </a>
+  <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
+    <li class="nav-item">
+      <a routerLink="movies/add" class="nav-link  py-3 border-bottom rounded-0" aria-current="page"
+        data-bs-toggle="tooltip" data-bs-placement="right" aria-label="Home" data-bs-original-title="Home">
+        <i class="bi bi-file-earmark-plus-fill"></i>
+
+      </a>
+    </li>
+  </ul>
+  <div class="dropdown border-top">
+    <a (click)="authService.logout()"
+      class="d-flex align-items-center justify-content-center p-3 link-body-emphasis text-decoration-none"
+      aria-expanded="false">
+      <i class="bi bi-door-open-fill text-danger"></i>
+    </a>
+  </div>
+</div>

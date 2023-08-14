@@ -1,0 +1,35 @@
+<div class="row p-5">
+    <div class="col-12">
+        <h1>
+            Add Movie
+        </h1>
+    </div>
+    <div class="col-12">
+        <form class="row m-0 p-0" [formGroup]="movieForm" (ngSubmit)="save()">
+            <div class="form-outline   p-0 mb-4 col-12">
+                <label for="name" class="form-label">Name</label>
+                <input formControlName="name" id="name" required type="text"
+                    [ngClass]="f.name.invalid && (isSubmit|| f.name.touched || f.name.dirty)? 'is-invalid': ''"
+                    class="form-control form-control-lg" placeholder="Name" />
+            </div>
+            <div class="form-outline  p-0 mb-4 col-12">
+                <label for="director" class="form-label">Director</label>
+                <input formControlName="director" class="form-control"
+                    [ngClass]="f.director.invalid && ( f.director.touched || f.director.dirty)? 'is-invalid': ''"
+                    type="text" id="director" class="form-control form-control-lg" placeholder="director" />
+            </div>
+            <div class="form-outline  p-0 mb-4 col-12">
+                <label for="image" class="form-label">Image</label>
+                <input formControlName="imageUrl" class="form-control"
+                    [ngClass]="f.imageUrl.invalid && ( f.imageUrl.touched || f.imageUrl.dirty)? 'is-invalid': ''"
+                    type="url" id="imageUrl" class="form-control form-control-lg" placeholder="Image" />
+            </div>
+            <button class="btn btn-outline-danger btn-lg col-5" type="button" *ngIf="data"
+                (click)="delete()">Delete</button>
+            <button class="btn btn-outline-success btn-lg col-5 ms-auto" type="submit">Add</button>
+
+
+        </form>
+    </div>
+
+</div>
