@@ -45,7 +45,7 @@ export class AuthService {
                 'auth/register',
                 user
             );
-            localStorage.setItem("currentUser", JSON.stringify(respone.existUser));
+            localStorage.setItem("currentUser", JSON.stringify(respone.newUser));
             localStorage.setItem("accessToken", respone.accessToken);
             this._router.navigateByUrl("");
             return respone;

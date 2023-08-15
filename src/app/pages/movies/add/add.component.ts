@@ -40,6 +40,7 @@ export class AddComponent implements OnInit {
       name: new FormControl(await this.data?.name, [Validators.required]),
       director: new FormControl(await this.data?.director),
       imageUrl: new FormControl(await this.data?.imageUrl),
+      year: new FormControl(await this.data?.year),
     });
   }
 
@@ -52,9 +53,13 @@ export class AddComponent implements OnInit {
       );
     }
     if (this.movieForm.valid) {
-      this.moviesService.movieCreate(this.movieForm.value)
+      if (!this.data)
+        this.moviesService.movieCreate(this.movieForm.value)
+      else
+        this.moviesService.movieUpdate(this.data._id, this.movieForm.value)
       this.movieForm.reset()
       this.isSubmit = false;
+      this.modalService.close()
       this.alertify.success(
         "Success",
         "Movie added successfully."

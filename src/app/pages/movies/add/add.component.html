@@ -24,9 +24,17 @@
                     [ngClass]="f.imageUrl.invalid && ( f.imageUrl.touched || f.imageUrl.dirty)? 'is-invalid': ''"
                     type="url" id="imageUrl" class="form-control form-control-lg" placeholder="Image" />
             </div>
+            <div class="form-outline  p-0 mb-4 col-12">
+                <label for="image" class="form-label">Year</label>
+                <input formControlName="year" class="form-control"
+                    [ngClass]="f.year.invalid && ( f.year.touched || f.year.dirty)? 'is-invalid': ''" type="number"
+                    id="year" class="form-control form-control-lg" placeholder="Year" />
+            </div>
+
+
             <button class="btn btn-outline-danger btn-lg col-5" type="button" *ngIf="data"
                 (click)="delete()">Delete</button>
-            <button class="btn btn-outline-success btn-lg col-5 ms-auto" type="submit">Add</button>
+            <button class="btn btn-outline-success btn-lg col-5 ms-auto" type="submit">{{data?'Update':'Add'}}</button>
 
 
         </form>
