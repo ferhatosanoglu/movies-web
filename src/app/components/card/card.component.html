@@ -1,7 +1,10 @@
-<div class="card text-bg-dark">
-  <img src="{{data.imageUrl}}" class="card-img">
+<div class="card text-white h-100">
+  <img src="{{data.imageUrl}}" class="card-img h-100">
   <div class="card-img-overlay">
     <h5 class="card-title text-shadow">{{data.name}}</h5>
-    <p class="card-text text-shadow">{{data.director}}</p>
+    <p class="card-text text-shadow position-absolute bottom-0 start-0 ms-2 mb-1">{{data.director}}</p>
+
+    <p class="card-text text-shadow position-absolute bottom-0 end-0 me-2 mb-1"><small>{{data.year}}</small></p>
   </div>
+
 </div>
